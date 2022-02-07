@@ -24,31 +24,41 @@ class ResultAppendAndDeleteHR {
         int s_index=0;
         int t_index=0;
         String result="";
-       
-        	for(int i=0; i<s.length(); i++){
-        		 s_index=i;
-                 t_index=i;
-                if(i<t.length()){
-                    if(s.charAt(i)!=t.charAt(i)){
-                        break;
-                    }
-                }
-                else{
-                    break;
-                }
-               
-            }
-        	System.out.println(t.length()+"-"+t_index+"= "+(t.length()-t_index)+" | "+s.length()+"-"+s_index+"= "+(s.length()-s_index));
-        	count=(t.length()-t_index)+(s.length()-s_index);
-        	System.out.println(count);
-        	if(k<count) {
-        		result="No";
-        	}
-        	else {
-        		result="Yes";
-        	}
-        	System.out.println(result);
-         return result;    
+       if(s.length()+t.length()<=k) {
+    	   
+       }
+       else {
+    	   for(int i=0; i<s.length(); i++){
+      		 s_index=i;
+               t_index=i;
+              if(i<t.length()){
+                  if(s.charAt(i)!=t.charAt(i)){
+                      break;
+                  }
+              }
+              else{
+                  break;
+              }
+             
+          }
+	      System.out.println(t.length()+"-"+t_index+"= "+(t.length()-t_index)+" | "+s.length()+"-"+s_index+"= "+(s.length()-s_index));
+	      count=(t.length()-t_index)+(s.length()-s_index);
+	      System.out.println(count);
+	      if(k<count) {
+	      	result="No";
+	      }
+	      else {
+	    	 if((count-k)%2==0) { 
+	    		 result="Yes";
+	    	 }
+	    	 else {
+	    		 result="No";
+	    	 }
+	      }
+       }
+        	
+        System.out.println(result);
+        return result;    
          
 
     }
